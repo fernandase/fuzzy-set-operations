@@ -54,7 +54,7 @@ plot.snorms = function(fuzzy.set.a, fuzzy.set.b, snorm){
     fuzzy.number.a = triangular.membership.function(base.set.a, fuzzy.set.a)
     fuzzy.number.b = triangular.membership.function(base.set.b, fuzzy.set.b)
     
-    base.set.union = seq(min(base.set.a, base.set.b), max(base.set.a, base.set.b), by=0.1)
+    base.set.union = union(round(base.set.a, 5), round(base.set.b, 5))
 
     fuzzy.number.a.union = triangular.membership.function(base.set.union, fuzzy.set.a)
     fuzzy.number.b.union = triangular.membership.function(base.set.union, fuzzy.set.b)

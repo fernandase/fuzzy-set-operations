@@ -22,3 +22,8 @@ triangular.membership.function = function(base.set, set.values){
 	}
 	u;
 }
+
+alfa_corte = function(fuzzy.set, alfa){
+	c("min.value" = (fuzzy.set["mean.value"] - fuzzy.set["min.value"])*alfa + fuzzy.set["min.value"],
+      "max.value" = (fuzzy.set["mean.value"] - fuzzy.set["max.value"])*alfa + fuzzy.set["max.value"])
+}

@@ -48,8 +48,8 @@ plot.tnorms = function(fuzzy.set.a, fuzzy.set.b, tnorm){
     else
         tnorm = tnorms
 
-    base.set.a = seq(fuzzy.set.a["min.value.a"], fuzzy.set.a["max.value.a"], by=0.1)
-    base.set.b = seq(fuzzy.set.b["min.value.b"], fuzzy.set.b["max.value.b"], by=0.1)
+    base.set.a = seq(fuzzy.set.a["min.value"], fuzzy.set.a["max.value"], by=0.1)
+    base.set.b = seq(fuzzy.set.b["min.value"], fuzzy.set.b["max.value"], by=0.1)
 
     fuzzy.number.a = triangular.membership.function(base.set.a, fuzzy.set.a)
     fuzzy.number.b = triangular.membership.function(base.set.b, fuzzy.set.b)
@@ -59,8 +59,7 @@ plot.tnorms = function(fuzzy.set.a, fuzzy.set.b, tnorm){
     fuzzy.number.a.inter = triangular.membership.function(base.set.inter, fuzzy.set.a)
     fuzzy.number.b.inter = triangular.membership.function(base.set.inter, fuzzy.set.b)
     
-    xlim.plot = c(min(fuzzy.set.a["min.value.a"], fuzzy.set.b["min.value.b"]) - 1, 
-                  max(fuzzy.set.a["max.value.a"], fuzzy.set.b["max.value.b"]) + 1)
+    xlim.plot = c(min(base.set.inter), max(base.set.inter))
     
     if (length(tnorm) > 1){
         par(mfrow=c(2,2))
@@ -74,7 +73,7 @@ plot.tnorms = function(fuzzy.set.a, fuzzy.set.b, tnorm){
         axis(1, at=xlim.plot[1]:xlim.plot[2], labels=xlim.plot[1]:xlim.plot[2], las = 1)
         
         #plot fuzzy.number.b
-        points(base.set.b, fuzzy.number.b, type = "l", xlim = xlim.plot, ylim = c(0,1), col = "red", xaxt = "n", lty = 2)
+        points(base.set.b, fuzzy.number.b, type = "l", ylim = c(0,1), col = "red", xaxt = "n", lty = 2)
         
         #add a fuzzy t-norm
         points(base.set.inter, tnorm[[i]](fuzzy.number.a.inter, fuzzy.number.b.inter), type = "l", col="blue", lwd = 3)
