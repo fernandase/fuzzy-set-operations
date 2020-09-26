@@ -23,7 +23,7 @@ fuzzy.number.a = c(min.value = 1, mean.value = 4, max.value = 6)
 fuzzy.number.b = c(min.value = 3, mean.value = 5, max.value = 7)
 ```
 
-### The **plot.tnorms** function gives the plot of all T-norms
+### The *plot.tnorms* function gives the plot of all T-norms
 
 ``` r
 plot.tnorms(fuzzy.number.a, fuzzy.number.b)
@@ -78,7 +78,7 @@ plot.tnorms(fuzzy.number.a, fuzzy.number.b, "dra")
 source("s-norms.R")
 ```
 
-### The **plot.snorms** function gives the plot of all S-norms
+### The *plot.snorms* function gives the plot of all S-norms
 
 ``` r
 plot.snorms(fuzzy.number.a, fuzzy.number.b)
